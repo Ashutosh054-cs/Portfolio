@@ -1,0 +1,455 @@
+/* ---------------------------
+   Global Styles
+----------------------------*/
+
+/* Basic Body Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6rem;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #f8f9fa;
+}
+
+/* Headings Font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Paragraph Text Color */
+p {
+  color: #343a40;
+}
+
+/* ---------------------------
+   Navbar and Logo
+----------------------------*/
+
+/* Logo Styling */
+.logo {
+  border: 0.1rem solid black;
+  border-radius: 1rem 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Navbar Link Style */
+.lit .nav-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+/* Navbar Link Hover Effect */
+.lit {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  padding-bottom: 5px;
+}
+.lit::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.125rem;
+  bottom: 0;
+  left: 0;
+  background-color: #212121;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.lit:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ---------------------------
+   Button Styles
+----------------------------*/
+
+/* General Button Hover Effect */
+.btn-outline-dark:hover {
+  background-color: #212529;
+  color: #fff;
+  border-color: #212529;
+}
+
+/* Custom Button */
+.custom-button {
+  transition: all 0.3s ease;
+}
+.custom-button:hover {
+  background-color: #212529;
+  color: #fff;
+  border-color: #212529;
+}
+
+/* Mobile-specific Button Styles */
+@media (max-width: 768px) {
+  .custom-button {
+    background-color: #212529;
+    color: #fff;
+    border: none;
+    width: 60%;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* ---------------------------
+   Main Body Background and Shapes
+----------------------------*/
+
+/* Main Body Background */
+.main-body {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  position: relative;
+  min-height: 100vh;
+  padding-top: 10rem;
+  overflow: hidden;
+}
+
+/* Decorative Shapes */
+.shape {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.1;
+  transform: scale(1);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Circular Shapes */
+.circle-1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #ff8a00;
+  top: 10%;
+  left: 20%;
+}
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #e52e71;
+  bottom: 15%;
+  right: 10%;
+}
+
+/* Square Shape */
+.square-1 {
+  width: 120px;
+  height: 120px;
+  background: #6c63ff;
+  top: 50%;
+  left: 70%;
+  transform: rotate(45deg);
+}
+
+/* ---------------------------
+   About Me Section
+----------------------------*/
+
+/* About Me Section Background and Padding */
+.about-me-section {
+  position: relative;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.about-me-section h2 {
+  color: #333;
+}
+.about-me-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+.about-me-section abbr {
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted #aaa;
+}
+
+/* ---------------------------
+   Skills Card
+----------------------------*/
+
+/* Card Container */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* List Item in Card */
+.list-group-item {
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.list-group-item:hover {
+  background-color: #f0f0f0;
+  color: #212529;
+  transform: translateY(-3px);
+}
+
+/* ---------------------------
+   Icons
+----------------------------*/
+
+/* Icon Style */
+.bi {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* ---------------------------
+   Floating Shapes
+----------------------------*/
+
+/* Background Decor */
+.background-decor {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.1;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Shape Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* Shape 1 */
+.decor-1 {
+  width: 150px;
+  height: 150px;
+  background: #ff8a00;
+  top: 10%;
+  left: 5%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Shape 2 */
+.decor-2 {
+  width: 200px;
+  height: 200px;
+  background: #e52e71;
+  bottom: 15%;
+  right: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Shape 3 */
+.decor-3 {
+  width: 100px;
+  height: 100px;
+  background: #009688;
+  bottom: 30%;
+  left: 10%;
+  animation: float 7s ease-in-out infinite;
+}
+
+/* ---------------------------
+   Responsive Adjustments
+----------------------------*/
+
+/* Medium Screens */
+@media (max-width: 992px) {
+  .decor-1 {
+    width: 120px;
+    height: 120px;
+    top: 12%;
+    left: 8%;
+  }
+  .decor-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 12%;
+    right: 8%;
+  }
+  .decor-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 25%;
+    left: 12%;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .decor-1 {
+    width: 100px;
+    height: 100px;
+    top: 8%;
+    left: 5%;
+  }
+  .decor-2 {
+    width: 120px;
+    height: 120px;
+    bottom: 8%;
+    right: 5%;
+  }
+  .decor-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 8%;
+  }
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 300px; /* Or any height you prefer */
+}
+
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+  .decor-1 {
+    width: 80px;
+    height: 80px;
+    top: 5%;
+    left: 3%;
+  }
+  .decor-2 {
+    width: 100px;
+    height: 100px;
+    bottom: 5%;
+    right: 3%;
+  }
+  .decor-3 {
+    display: none; /* Hides the third shape */
+  }
+}
+
+/* Coursel section */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.carousel-caption h5 {
+  margin-top: 20px !important; /* Add space above the heading */
+}
+
+.carousel-caption {
+  margin-bottom: 20px !important; /* Add space below the carousel content */
+}
+
+/* Img height  */
+
+.carousel-item img {
+  height: 800px; /* Set your desired height */
+  width: 100%; /* Ensure it takes the full width */
+  object-fit: cover; /* Ensures proper cropping for uneven images */
+}
+
+/* ---------------------------
+   Extra Section
+----------------------------*/
+/* Padding Top for Sections */
+.background-decor {
+  width: 150px;
+  height: 150px;
+  background: rgba(100, 200, 255, 0.2);
+  border-radius: 50%;
+}
+
+.decor-1 {
+  top: 10%;
+  left: -5%;
+}
+
+.decor-2 {
+  bottom: 10%;
+  right: -5%;
+}
+
+.decor-3 {
+  background: rgba(255, 100, 100, 0.2);
+}
+
+.shot {
+  padding-top: 7rem !important;
+}
+
+/* Top Border Button */
+.top {
+  border: 0.05rem solid black;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 1rem 0.75rem;
+  text-decoration: none;
+  padding: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.35rem;
+}
+
+/* Gradient Text Effect for Headings */
+h1 span {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.luo {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Background SVG Styles */
+.background-svg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .background-svg {
+    opacity: 0.5;
+  }
+}
