@@ -28,9 +28,9 @@ const projects = [
   },
   {
     image: MyImage3,
-    title: "Auto Generate Qr code",
+    title: "Auto Generate QR Code",
     description:
-      "I have created a website that generates QR codes. Users can input any text or URL and the website will generate a QR code for them. This project is built using HTML, CSS, and JavaScript. I have also added a feature to download the QR code as an image.Share the qr code with your friends and family via whatsapp or any share app.",
+      "I have created a website that generates QR codes. Users can input any text or URL and the website will generate a QR code for them. This project is built using HTML, CSS, and JavaScript. I have also added a feature to download the QR code as an image. Share the QR code with your friends and family via WhatsApp or any share app.",
     explanation:
       "This project helped me understand the basics of web development and sparked my interest in front-end development. Over time, I improved the website by implementing React and other modern web technologies.",
     link: "https://qr-code-eta-virid.vercel.app/",
@@ -42,7 +42,6 @@ export default function Project() {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   React.useEffect(() => {
-    // Whenever the section comes into view, reset and animate it again
     if (inView) {
       controls.start("show");
     } else {
@@ -55,8 +54,8 @@ export default function Project() {
       className="project-section py-5"
       id="projects"
       ref={ref}
-      initial="hidden" // Initial state is hidden
-      animate={controls} // Animation will trigger based on inView state
+      initial="hidden"
+      animate={controls}
     >
       <div className="container">
         {/* Section Title */}
@@ -75,9 +74,13 @@ export default function Project() {
           variants={fadeIn("up", 0.4)}
         >
           {projects.map((project, index) => (
-            <div key={index} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div
+              key={index}
+              className="col-lg-4 col-md-6 col-sm-12 mb-4"
+              style={{ position: "relative" }}
+            >
               <motion.div
-                className="card shadow-lg border-0"
+                className="card shadow-lg border-0 project-card"
                 variants={fadeIn("up", index * 0.2 + 0.6)}
               >
                 <img
@@ -91,10 +94,15 @@ export default function Project() {
                 </div>
                 <div className="card-footer">
                   <p className="text-muted">{project.explanation}</p>
+                  <a
+                    href={project.link}
+                    className="btn btn-primary mt-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Lead Me There
+                  </a>
                 </div>
-                <a href="#" class="btn btn-primary">
-                  {project.link}
-                </a>
               </motion.div>
             </div>
           ))}

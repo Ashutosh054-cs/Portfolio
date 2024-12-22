@@ -326,6 +326,14 @@ p {
   height: 300px; /* Or any height you prefer */
 }
 
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 /* Extra Small Screens */
 @media (max-width: 576px) {
