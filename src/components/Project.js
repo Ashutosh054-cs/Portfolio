@@ -15,6 +15,7 @@ const projects = [
       "I have created this website with the use of HTML, CSS, and JavaScript. Using vanilla CSS and some basic JavaScript. This is my first website I have made. It might be basic, but I have learned a lot from it and created an updated version using React.",
     explanation:
       "This project helped me understand the basics of web development and sparked my interest in front-end development. Over time, I improved the website by implementing React and other modern web technologies.",
+    link: "#",
   },
   {
     image: MyImage2,
@@ -23,14 +24,16 @@ const projects = [
       "In this project, I have created a Telegram bot using Python. This bot takes a link from YouTube and extracts the audio file of that video. It also has the capability to extract audio from Instagram links. This is my second project.",
     explanation:
       "This bot demonstrates my knowledge of Python and web scraping. I used libraries like `requests` and `BeautifulSoup` to interact with websites and download media. I am constantly improving this bot to add more features and optimize it.",
+    link: "#",
   },
   {
     image: MyImage3,
-    title: "UI/UX Design",
+    title: "Auto Generate Qr code",
     description:
-      "I have created simple UI/UX designs for websites and mobile apps.",
+      "I have created a website that generates QR codes. Users can input any text or URL and the website will generate a QR code for them. This project is built using HTML, CSS, and JavaScript. I have also added a feature to download the QR code as an image.Share the qr code with your friends and family via whatsapp or any share app.",
     explanation:
-      "UI/UX design is one of my favorite areas in development. This project showcases my ability to design user-friendly, intuitive interfaces. I focused on simplicity and user experience while creating these designs.",
+      "This project helped me understand the basics of web development and sparked my interest in front-end development. Over time, I improved the website by implementing React and other modern web technologies.",
+    link: "https://qr-code-eta-virid.vercel.app/",
   },
 ];
 
@@ -89,6 +92,9 @@ export default function Project() {
                 <div className="card-footer">
                   <p className="text-muted">{project.explanation}</p>
                 </div>
+                <a href="#" class="btn btn-primary">
+                  {project.link}
+                </a>
               </motion.div>
             </div>
           ))}
