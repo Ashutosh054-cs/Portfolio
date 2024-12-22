@@ -4,7 +4,7 @@ import { fadeIn } from "../variants";
 import { useInView } from "../useInView";
 import MyImage from "../assets/images/port.webp";
 import MyImage2 from "../assets/images/opa.webp";
-import MyImage3 from "../assets/images/uxui.webp";
+import MyImage3 from "../assets/images/notes.webp";
 
 // Projects data
 const projects = [

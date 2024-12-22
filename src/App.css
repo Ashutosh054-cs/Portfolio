@@ -68,6 +68,12 @@ p {
   transform-origin: bottom left;
 }
 
+@media screen and (max-width: 376px) {
+  .logo {
+    font-size: 0.8rem;
+  }
+}
+
 /* ---------------------------
    Button Styles
 ----------------------------*/
