@@ -28,8 +28,8 @@ const Projects: React.FC = () => {
       description: 'My personal portfolio website showcasing my projects and skills.',
       tech: ['React', 'Tailwind css', 'Framer Motion', 'React Router'],
       image: protpic,
-      github: 'https://github.com/your-username/task-manager',
-      demo: 'https://your-demo-link.com/task-manager'
+      github: 'https://github.com/Ashutosh054-cs/Portfolio',
+      demo: 'https://ashuzportfolio.vercel.app/'
     }
   ];
 
