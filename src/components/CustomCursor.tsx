@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const CustomCursor: React.FC = () => {
@@ -6,6 +6,8 @@ const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isHoveringName, setIsHoveringName] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isActive, setIsActive] = useState(true);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const checkTouchDevice = () => {
@@ -17,6 +19,9 @@ const CustomCursor: React.FC = () => {
 
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsActive(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setIsActive(false), 1500); // 1.5s inactivity
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -45,6 +50,15 @@ const CustomCursor: React.FC = () => {
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mouseover', handleMouseOver);
       window.removeEventListener('mouseout', handleMouseOut);
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Hide default cursor
+    document.body.style.cursor = "none";
+    return () => {
+      document.body.style.cursor = "";
     };
   }, []);
 
@@ -58,11 +72,12 @@ const CustomCursor: React.FC = () => {
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
           scale: isHoveringName ? 3 : isHovering ? 2 : 1,
+          opacity: isActive ? 1 : 0,
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
-          damping: 28,
+          stiffness: 400, // faster
+          damping: 30,    // less lag
         }}
       />
       <motion.div
@@ -71,11 +86,12 @@ const CustomCursor: React.FC = () => {
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
           scale: isHovering ? 1.5 : 1,
+          opacity: isActive ? 1 : 0,
         }}
         transition={{
           type: "spring",
-          stiffness: 300,
-          damping: 30,
+          stiffness: 350, // faster
+          damping: 28,    // less lag
         }}
       />
     </>
