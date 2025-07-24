@@ -63,7 +63,8 @@ const Contact: React.FC = () => {
           </motion.div>
           
           <motion.form
-            onSubmit={handleSubmit}
+            action="https://formspree.io/f/mdkdgnkv"
+            method="POST"
             className="space-y-6"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -74,37 +75,28 @@ const Contact: React.FC = () => {
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
                 className="w-full p-4 bg-transparent border border-gray-700 focus:border-white transition-colors outline-none cursor-hover tracking-wider"
                 required
               />
             </div>
-            
             <div>
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
                 className="w-full p-4 bg-transparent border border-gray-700 focus:border-white transition-colors outline-none cursor-hover tracking-wider"
                 required
               />
             </div>
-            
             <div>
               <textarea
                 name="message"
                 placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={6}
                 className="w-full p-4 bg-transparent border border-gray-700 focus:border-white transition-colors outline-none resize-none cursor-hover tracking-wider"
                 required
               />
             </div>
-            
             <motion.button
               type="submit"
               className="w-full p-4 bg-white text-black hover:bg-gray-200 transition-colors cursor-hover tracking-wider flex items-center justify-center gap-2"
