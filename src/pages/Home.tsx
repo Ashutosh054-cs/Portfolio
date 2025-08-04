@@ -166,25 +166,7 @@ const Home: React.FC = () => {
               </motion.a>
             </motion.div>
 
-            {/* Scroll indicator */}
-            <motion.div
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 3, duration: 1 }}
-            >
-              <motion.div
-                className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <motion.div
-                  className="w-1 h-3 bg-white rounded-full mt-2"
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-              </motion.div>
-            </motion.div>
+            
           </div>
         </section>
       </motion.div>
